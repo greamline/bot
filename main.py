@@ -4,13 +4,11 @@
 import re 
 from datetime import date
 from urllib.parse import urlunsplit
-from urllib.request import urlopen
+#from urllib.request import urlopen
 from decimal import Decimal
+import urllib.request
 
-
-#url = "https://www.facebook.com/login"
-url = "https://ya.ru/"
-
-f = urlopen(url)
-#urlopen(_url_courses( cur_symbol, beg, end))
-print (f)
+with urllib.request.urlopen('https://www.facebook.com/login') as response:
+   html = response.read()
+   
+print (html)
